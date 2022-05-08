@@ -1,0 +1,86 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    
+      <meta charset="utf-8">
+      <title>Maps</title>
+      
+      
+        
+          
+        
+        
+          
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.min.js"></script>
+        <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js"></script>
+        <script type="text/javascript">
+            Bokeh.set_log_level("info");
+        </script>
+        
+      
+      
+    
+  </head>
+  
+  
+  <body>
+    
+      
+        
+          
+          
+            
+              <div class="bk-root" id="78b205ef-13ec-47e0-bfcd-cf970d613953" data-root-id="1011"></div>
+            
+          
+        
+      
+      
+        <script type="application/json" id="1012">
+          {"d5231b65-3140-4b15-a1dc-7c840f24ed53":{"defs":[],"roots":{"references":[{"attributes":{"child":{"id":"1001"},"title":"Asthma"},"id":"1002","type":"Panel"},{"attributes":{"text":"&lt;iframe src=map_PM25.html style='width:1000px; height: 1000px'&gt;&lt;iframe&gt;"},"id":"1003","type":"Div"},{"attributes":{"child":{"id":"1003"},"title":"PM 2.5"},"id":"1004","type":"Panel"},{"attributes":{"text":"&lt;iframe src=map_NO2.html style='width:1000px; height: 1000px'&gt;&lt;iframe&gt;"},"id":"1005","type":"Div"},{"attributes":{"text":"&lt;iframe src=map_O3.html style='width:1000px; height: 1000px'&gt;&lt;iframe&gt;"},"id":"1007","type":"Div"},{"attributes":{"text":"&lt;iframe src=map_SO2.html style='width:1000px; height: 1000px'&gt;&lt;iframe&gt;"},"id":"1009","type":"Div"},{"attributes":{"child":{"id":"1007"},"title":"O3"},"id":"1008","type":"Panel"},{"attributes":{"child":{"id":"1005"},"title":"NO2"},"id":"1006","type":"Panel"},{"attributes":{"tabs":[{"id":"1002"},{"id":"1004"},{"id":"1006"},{"id":"1008"},{"id":"1010"}]},"id":"1011","type":"Tabs"},{"attributes":{"child":{"id":"1009"},"title":"SO2"},"id":"1010","type":"Panel"},{"attributes":{"text":"&lt;iframe src=map_asthma.html style='width:1000px; height: 1000px'&gt;&lt;iframe&gt;"},"id":"1001","type":"Div"}],"root_ids":["1011"]},"title":"Bokeh Application","version":"2.4.2"}}
+        </script>
+        <script type="text/javascript">
+          (function() {
+            const fn = function() {
+              Bokeh.safely(function() {
+                (function(root) {
+                  function embed_document(root) {
+                    
+                  const docs_json = document.getElementById('1012').textContent;
+                  const render_items = [{"docid":"d5231b65-3140-4b15-a1dc-7c840f24ed53","root_ids":["1011"],"roots":{"1011":"78b205ef-13ec-47e0-bfcd-cf970d613953"}}];
+                  root.Bokeh.embed.embed_items(docs_json, render_items);
+                
+                  }
+                  if (root.Bokeh !== undefined) {
+                    embed_document(root);
+                  } else {
+                    let attempts = 0;
+                    const timer = setInterval(function(root) {
+                      if (root.Bokeh !== undefined) {
+                        clearInterval(timer);
+                        embed_document(root);
+                      } else {
+                        attempts++;
+                        if (attempts > 100) {
+                          clearInterval(timer);
+                          console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                        }
+                      }
+                    }, 10, root)
+                  }
+                })(window);
+              });
+            };
+            if (document.readyState != "loading") fn();
+            else document.addEventListener("DOMContentLoaded", fn);
+          })();
+        </script>
+    
+  </body>
+  
+</html>

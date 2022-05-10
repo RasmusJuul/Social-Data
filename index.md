@@ -15,17 +15,17 @@ First, and the most important, its been shown that the number of asthma hospital
 
 Secondly, we get an estimate of the importance of each main pollutant with respect to the number of asthma hospitalizations. Using this estimation of importance to define an average pollution level, we can get a descriptive measure that combines the values of the four main pollutants in one variable, simplifying in someway the  plots and the analysis. 
 
-```math Avg pollution = 1.55·NO2 + 0.70·PM2.5 + 0.99·O3 + 0.77·SO2 ```
+$Avg pollution = 1.55·NO2 + 0.70·PM2.5 + 0.99·O3 + 0.77·SO2$
 
 where each pollutant vector has been normalized between 0 and 1:
 
-```math zi = (xi – min(x)) / (max(x) – min(x)) ```
+$zi = (xi – min(x)) / (max(x) – min(x))$
 
 <iframe src="feature_importance.html" height="550" width="1100"></iframe>
 
 The main conclusion from this step is that the analysis has to be split between geographical areas. Thus, we decide as a first step to study asthma vs pollution per borough.
 
-## Study of pollution per Borough. More money = Better healthcare? When the trendline highly varies depending on the district we are located.
+## Study of pollution per Borough. When the trendline highly varies depending on the district we are located.
 <iframe src="scatter_borough.html" height="525" width="1600"></iframe>
 Something really interesting can be observed here, and is the fact that really different regression trendlines can be observed depending on the neighbourhood. While in the Bronx the number of asthma hospitalizations strongly increases as the levels of pollution increase, in Manhattan happens exactly the opposite.
 
@@ -33,7 +33,7 @@ Bronx, Brooklyn and Queens district seem to show the expected behaviour. As leve
 
 To answer this question we looked into a variable we had not yet considered the quality of life based on income. Checking the Median Household Income from 2017 in NYC, we observe that the Bronx (highest number of hospitalizations) has the lowest value with a median income of $37.397 , while Manhattan (lowest number of hospitalizations) has a median income of $85.071.
 
-## The strange case of Manhattan. 
+## The strange case of Manhattan. More money = Better healthcare? 
 <iframe src="manhattan_districts.html" height="500" width="1600"></iframe>
 In the previous plot it has been clearly seen how the trend between asthma and pollution was the oposite than the one found in the other districts. This made us realize that a zoom-in was needed in order to find possible explanations on way this was happening. How is it possible that in these Manhattan districts with higher levels of pollution there are less asthma cases? And we found it. If we add the district feature in the visualization, we can easily observe some clustering between the dots: high values of asthma mainly correspond to 301,302 and 303 (upper manhattan) while low values corresponds to the others. Why this big geographical difference?
 

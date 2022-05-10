@@ -1,4 +1,4 @@
-# Asthma and Pollution in New York City
+# The Air of New York City:<br> An Analysis of Pollution and Asthma
 It is common knoweldge that air pollution is a contributing factor of respiratory diseases. And among all the broad types of respiratory diseases that exists, specifically asthma. Asthma is a chronic respiratory disease characterized by variable airflow obstruction, bronchial hyperresponsiveness, and airway inflammation. [[1]](https://pubmed.ncbi.nlm.nih.gov/32867076/) Researchers have long linked asthma with exposure to air pollution, which can make asthma symptoms worse and trigger asthma attacks. Moreover, it is estimated six million children in the United States with asthma are especially vulnerable to air pollution. [[2]](https://www.epa.gov/sciencematters/links-between-air-pollution-and-childhood-asthma#:~:text=Researchers%20have%20long%20linked%20asthma,worse%20and%20trigger%20asthma%20attacks). And not only vulnerable once they have the disease. It has been also proved that exposure to main air pollutants such as NO2, CO, and PM2.5 is linked to regional DNA methylation differences in asthma. [[3]](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5756438/pdf/13148_2017_Article_433.pdf)
 
 The aim of this website is to dig deeper into this relation between air pollution and asthma. To do so, NYC air pollution data will be used and combined with asthma hospitalizations data for children. Is there any clear correlation between air pollution and the number of asthma hospitalizations? If so, which are the air pollutants that are more correlated? How do these values vary between the different neighbourhoods? Where is more urgent to reduce the emissions of hazardous air pollutants? Is it possible to predict which is gonna be the number of asthma hospitalizations in order to prepare these hospitals that are gonna suffer more for such big workloads? 
@@ -49,5 +49,5 @@ In the district map we see an overall decrease in pollutants (other than O3), an
 So the main takeaway from this analysis is while air pollution plays a role in whether or not you'll end up hospitalized for asthma, the biggest contributing factor is seemingly your income, which is most likely just an indicator of some other underlying cause, like how much time/money you have for preventive care etc. which is harder to measure.
 
 
-# Link to explainer notebook:
-[link](https://nbviewer.org/github/RasmusJuul/Social-Data/blob/main/Explainer%20Notebook.ipynb)
+# Explainer notebook:
+[Click here to access the notebook](https://nbviewer.org/github/RasmusJuul/Social-Data/blob/main/Explainer%20Notebook.ipynb)

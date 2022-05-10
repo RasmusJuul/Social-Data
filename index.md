@@ -9,17 +9,8 @@ It can be clearly seen how there is a tendence in decrease in both the number of
 
 Once seen how the tendency that both asthma cases and air pollutants are following, the next question that arise is: Is it possible to build a model that relates the number of asthma hospitalizations with the different levels of air pollutants? Which is the impact that each district has?
 ## Machine learning model to predict the level of asthma hospitalizations
-As a starting point, we built this model (random forest regression) aiming to predict if, with the chosen features, we were able to predict the number of asthma hospitalizations. Our model was able to predict hospitalizations with high accurate. However, few things to highlight emerged from our analysis. 
 
-First, and the most important, its been shown that the number of asthma hospitalizations basically depends on the district we are located in. And that the levels of pollutants only have a small impact when the analysis is done on NYC as a whole.
-
-Secondly, we get an estimate of the importance of each main pollutant with respect to the number of asthma hospitalizations. Using this estimation of importance to define an average pollution level, we can get a descriptive measure that combines the values of the four main pollutants in one variable, simplifying in someway the  plots and the analysis. 
-
-Avg pollution = 1.55·NO2 + 0.70·PM2.5 + 0.99·O3 + 0.77·SO2
-
-where each pollutant vector has been normalized between 0 and 1:
-
-zi = (xi – min(x)) / (max(x) – min(x))
+We've trained a machine learning model, namely a random forest regressor, to predict the number of hospitalizations from the measured amounts of polution. The algorithm was able to accurately model the dataset and it is clear that there is a distinct relationship between polutants and asthma cases. The model can tell us which parts of the data is more influential on the number asthma hospitalization and in this case it is very dependent on which district we are in. This is interesting since it might hint that social and economic factors are very influential on asthma hospitalization. It can also be observed that every polutant measured have an effect on the number of hospitalizations and that the effect is different for each polutant. The model was so effective at predicting the dataset that we can conclude that most of the important features for predicting asthma cases is somewhat present in our dataset, albeit having to analyse why the district is so important (which may be a very deep rabbit hole).
 
 <iframe src="feature_importance.html" height="550" width="1100"></iframe>
 

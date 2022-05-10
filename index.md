@@ -15,11 +15,11 @@ First, and the most important, its been shown that the number of asthma hospital
 
 Secondly, we get an estimate of the importance of each main pollutant with respect to the number of asthma hospitalizations. Using this estimation of importance to define an average pollution level, we can get a descriptive measure that combines the values of the four main pollutants in one variable, simplifying in someway the  plots and the analysis. 
 
-$Avg pollution = 1.55·NO2 + 0.70·PM2.5 + 0.99·O3 + 0.77·SO2$
+Avg pollution = 1.55·NO2 + 0.70·PM2.5 + 0.99·O3 + 0.77·SO2
 
 where each pollutant vector has been normalized between 0 and 1:
 
-$zi = (xi – min(x)) / (max(x) – min(x))$
+zi = (xi – min(x)) / (max(x) – min(x))
 
 <iframe src="feature_importance.html" height="550" width="1100"></iframe>
 
@@ -47,3 +47,7 @@ To further investigate the difference in districts a visualization of the asthma
 In the district map we see an overall decrease in pollutants (other than O3), and a decrease in the amount of asthma hospitalizations. It is also easy to see when swiching between the median income overlay and the asthma hospitalization overlay that there is an inverse correlation between the two. While, we have shown that the amount of hospitalizations is highly dependent on the median income of the district, this median income does not change much over the 8 year time period. So we observe a decrease in both overall pollution and asthma hospitalizations independent of median income over the time period, which is what we would expect to see considering the well established connection between air pollution and asthma.
 
 So the main takeaway from this analysis is while air pollution plays a role in whether or not you'll end up hospitalized for asthma, the biggest contributing factor is seemingly your income, which is most likely just an indicator of some other underlying cause, like how much time/money you have for preventive care etc. which is harder to measure.
+
+
+# Link to explainer notebook:
+https://nbviewer.org/github/RasmusJuul/Social-Data/blob/main/Explainer%20Notebook.ipynb

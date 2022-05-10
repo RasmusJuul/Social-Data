@@ -14,7 +14,7 @@ We've trained a machine learning model, namely a random forest regressor, to pre
 
 <iframe src="feature_importance.html" height="550" width="1100"></iframe>
 
-The main conclusion from this step is that the analysis has to be split between geographical areas. Thus, we decide as a first step to study asthma vs pollution per borough.
+Since the districts are so important when modelling asthma hospitializations, we now further examine the asthma vs pollution relation for different boroughs.
 
 ## Study of pollution per Borough. When the trendline highly varies depending on the district we are located.
 <iframe src="scatter_borough.html" height="525" width="1600"></iframe>

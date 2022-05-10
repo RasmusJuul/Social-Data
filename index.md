@@ -50,4 +50,4 @@ So the main takeaway from this analysis is while air pollution plays a role in w
 
 
 # Link to explainer notebook:
-https://nbviewer.org/github/RasmusJuul/Social-Data/blob/main/Explainer%20Notebook.ipynb
+[link](https://nbviewer.org/github/RasmusJuul/Social-Data/blob/main/Explainer%20Notebook.ipynb)

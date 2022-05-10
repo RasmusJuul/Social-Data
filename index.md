@@ -9,42 +9,41 @@ It can be clearly seen how there is a tendence in decrease in both the number of
 
 Once seen how the tendency that both asthma cases and air pollutants are following, the next question that arise is: Is it possible to build a model that relates the number of asthma hospitalizations with the different levels of air pollutants? Which is the impact that each district has?
 ## Machine learning model to predict the level of asthma hospitalizations
-As a starting point, we built this model aiming to predict if, with the chosen features, we were able to predict the number of asthma hospitalizations. And we were, with high accurate results. Thus, few things to highlight emerged from our analysis. 
+As a starting point, we built this model (random forest regression) aiming to predict if, with the chosen features, we were able to predict the number of asthma hospitalizations. Our model was able to predict hospitalizations with high accurate. However, few things to highlight emerged from our analysis. 
 
-First, and the most important, its been shown that the number of asthma hospitalizations basically depends on the district we are located in. And that the levels of pollutants have a small impact when the analysis is done in such general terms (whole NYC).
+First, and the most important, its been shown that the number of asthma hospitalizations basically depends on the district we are located in. And that the levels of pollutants only have a small impact when the analysis is done on NYC as a whole.
 
-Secondly, its been seen the importance of each main pollutant with respect to the number of asthma hospitalizations. Thus, it allows us to define an average pollution level, which is basically a descriptive mesure that combines the values of the four main pollutants in just one variable, simplifying in someway the  plots and the analysis. 
+Secondly, we get an estimate of the importance of each main pollutant with respect to the number of asthma hospitalizations. Using this estimation of importance to define an average pollution level, we can get a descriptive measure that combines the values of the four main pollutants in one variable, simplifying in someway the  plots and the analysis. 
 
-$$ Avg pollution = 1.55·NO2 + 0.70·PM2.5 + 0.99·O3 + 0.77·SO2 $$
+```math Avg pollution = 1.55·NO2 + 0.70·PM2.5 + 0.99·O3 + 0.77·SO2 ```
 
 where each pollutant vector has been normalized between 0 and 1:
 
-$$ zi = (xi – min(x)) / (max(x) – min(x)) $$
+```math zi = (xi – min(x)) / (max(x) – min(x)) ```
 
-<iframe src="feature_importance.html" height="500" width="1100"></iframe>
+<iframe src="feature_importance.html" height="550" width="1100"></iframe>
 
 The main conclusion from this step is that the analysis has to be split between geographical areas. Thus, we decide as a first step to study asthma vs pollution per borough.
 
-## Pollution per Borough. The strange case of Manhattan
-
+## Study of pollution per Borough. More money = Better healthcare? When the trendline highly varies depending on the district we are located.
 <iframe src="scatter_borough.html" height="525" width="1600"></iframe>
-
-## More money = Better healthcare? When the trendline highly varies depending on the district we are located.
 Something really interesting can be observed here, and is the fact that really different regression trendlines can be observed depending on the neighbourhood. While in the Bronx the number of asthma hospitalizations strongly increases as the levels of pollution increase, in Manhattan happens exactly the opposite.
 
-Bronx, Brookykn and Queens district seem to show the expected behaviour. As levels of pollution increase, air becomes more polluted, and so the number of asthma hospitalizations increases. However, why does the number of hospitalizations decrease in Manhattan as the levels of air pollution increase?
+Bronx, Brooklyn and Queens district seem to show the expected behaviour. As levels of pollution increase, air becomes more polluted, and so the number of asthma hospitalizations increases. However, why does the number of hospitalizations decrease in Manhattan as the levels of air pollution increase?
 
-Different hypothesis appear here. Is it because in the more polluted areas of Manhattan, there is less space for hospitals in which you can treat asthma cases? Or is it because healtcare and quality of life is basically better in Mantattan?
+To answer this question we looked into a variable we had not yet considered the quality of life based on income. Checking the Median Household Income from 2017 in NYC, we observe that the Bronx (highest number of hospitalizations) has the lowest value with a median income of $37.397 , while Manhattan (lowest number of hospitalizations) has a median income of $85.071.
 
-Is it hard to believe that the first hypothesis might be the cause, specially becuase if we look at the more polluted ares of Manhattan we can find hospitals such as the Metropolitan [[5]](https://www.nychealthandhospitals.org/metropolitan/about-us/), which have a Children’s Asthma Program or Bellevue [[6]](https://www.nychealthandhospitals.org/bellevue/health-care-services/childrens-health/) which provides multidisciplinary care for children and adolescents with asthma.
-
-Thus, it seems that these differences are due to the fact that the quality of life and the healthcare services might be better in Manhattan. If we go to check the Median Household Income on 2017 in NYC, we observe that the Bronx has the lowest value with a Median Household Income of 37.397 \\$ , while Manhattan has a value up to 85.071 \\$.
-
+## The strange case of Manhattan. 
 <iframe src="manhattan_districts.html" height="500" width="1600"></iframe>
+In the previous plot it has been clearly seen how the trend between asthma and pollution was the oposite than the one found in the other districts. This made us realize that a zoom-in was needed in order to find possible explanations on way this was happening. How is it possible that in these Manhattan districts with higher levels of pollution there are less asthma cases? And we found it. If we add the district feature in the visualization, we can easily observe some clustering between the dots: high values of asthma mainly correspond to 301,302 and 303 (upper manhattan) while low values corresponds to the others. Why this big geographical difference?
 
-Two observations can be extracted from the Scatter plot above. First, that definitely a negative correlation exists in Manhattan between the levels of pollutants and the number of asthma hospitalizations. Second, that something weird with the colors, right? Let's dig deep into that:
-
+So with the knowledge that there is a big difference in median income and number of hospitalizations between Manhattan and the Bronx, we looked further into the impact of median income on the number of asthma hospitalizations? To answer this question a new visualization has been made.
 <iframe src="proportion_manhattan.html" height="500" width="1600"></iframe>
+In the above graphic it is clear that for each district when median income is low the number of asthma hospitalizations are high, and pollution seemingly have little effect compared to income. And that the low income districts of Manhattan has slightly lower amounts of pollution, which is why we saw the reverse correlation between pollution and hospitalizations in Manhattan.
 
 ## District map
+To further investigate the difference in districts a visualization of the asthma hospitalizations, pollutants, and median income for each district was made:
 <iframe src="map.html" height="1150" width="1600"></iframe>
+In the district map we see an overall decrease in pollutants (other than O3), and a decrease in the amount of asthma hospitalizations. It is also easy to see when swiching between the median income overlay and the asthma hospitalization overlay that there is an inverse correlation between the two. While, we have shown that the amount of hospitalizations is highly dependent on the median income of the district, this median income does not change much over the 8 year time period. So we observe a decrease in both overall pollution and asthma hospitalizations independent of median income over the time period, which is what we would expect to see considering the well established connection between air pollution and asthma.
+
+So the main takeaway from this analysis is while air pollution plays a role in whether or not you'll end up hospitalized for asthma, the biggest contributing factor is seemingly your income, which is most likely just an indicator of some other underlying cause, like how much time/money you have for preventive care etc. which is harder to measure.

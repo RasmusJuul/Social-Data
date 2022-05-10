@@ -3,7 +3,7 @@ It is common knoweldge that air pollution is a contributing factor of respirator
 
 The aim of this website is to dig deeper into this relation between air pollution and asthma. To do so, NYC air pollution data will be used and combined with asthma hospitalizations data for children. Is there any clear correlation between air pollution and the number of asthma hospitalizations? If so, which are the air pollutants that are more correlated? How do these values vary between the different neighbourhoods? Where is more urgent to reduce the emissions of hazardous air pollutants? Is it possible to predict which is gonna be the number of asthma hospitalizations in order to prepare these hospitals that are gonna suffer more for such big workloads? 
 
-<iframe src="evolution.html" height="400" width="1000"></iframe>
+<iframe src="evolution.html" height="400" width="1100"></iframe>
 
 It can be clearly seen how there is a tendence in decrease in both the number of asthma hospitalizations and the levels of emission of the main pollutants. With the exception of O3, the levels of PM2.5, NO2 and SO2 have been significanlty reduced in the last decade, which evidence that sustainability policies were put into practice. Air quality levels registred during the 2000-2010 decade and their impact on population's health raised the attention of key decision makers and the public which lead to polices aming to improve local air quality, reduce greenhouse gas emissions and revert the situation that air pollution was taking. [[4]](https://www.healthypeople.gov/2020/healthy-people-in-action/story/new-york-city-air-quality-programs-reduce-harmful-air-pollutants)
 
@@ -21,13 +21,13 @@ where each pollutant vector has been normalized between 0 and 1:
 
 $$ zi = (xi – min(x)) / (max(x) – min(x)) $$
 
-<iframe src="feature_importance.html" height="600" width="1000"></iframe>
+<iframe src="feature_importance.html" height="500" width="1100"></iframe>
 
 The main conclusion from this step is that the analysis has to be split between geographical areas. Thus, we decide as a first step to study asthma vs pollution per borough.
 
 ## Pollution per Borough. The strange case of Manhattan
 
-<iframe src="scatter_borough.html" height="500" width="1600"></iframe>
+<iframe src="scatter_borough.html" height="525" width="1600"></iframe>
 
 ## More money = Better healthcare? When the trendline highly varies depending on the district we are located.
 Something really interesting can be observed here, and is the fact that really different regression trendlines can be observed depending on the neighbourhood. While in the Bronx the number of asthma hospitalizations strongly increases as the levels of pollution increase, in Manhattan happens exactly the opposite.
@@ -40,7 +40,7 @@ Is it hard to believe that the first hypothesis might be the cause, specially be
 
 Thus, it seems that these differences are due to the fact that the quality of life and the healthcare services might be better in Manhattan. If we go to check the Median Household Income on 2017 in NYC, we observe that the Bronx has the lowest value with a Median Household Income of 37.397 \\$ , while Manhattan has a value up to 85.071 \\$.
 
-<iframe src="mahattan_districts.html" height="500" width="1600"></iframe>
+<iframe src="manhattan_districts.html" height="500" width="1600"></iframe>
 
 Two observations can be extracted from the Scatter plot above. First, that definitely a negative correlation exists in Manhattan between the levels of pollutants and the number of asthma hospitalizations. Second, that something weird with the colors, right? Let's dig deep into that:
 

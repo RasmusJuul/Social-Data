@@ -1,3 +1,4 @@
 # SocialDataProject
-Pollution and Asthma in NYC
-https://rasmusjuul.github.io/SocialDataProject/
+
+Website:
+https://rasmusjuul.github.io/Social-Data/
